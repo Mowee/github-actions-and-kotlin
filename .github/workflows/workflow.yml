@@ -1,0 +1,16 @@
+name: kotlin and github actions
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Kotlin script
+        run: kotlinc -script ./kotlin-script.kts
